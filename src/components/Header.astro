@@ -1,6 +1,6 @@
 ---
-
-import headerlogo from "../assets/Diseño sin título-Photoroom.png"
+import { Image } from 'astro:assets';
+import headerlogo from "../assets/LogoColor.png"
 const navItems= [
     {href: '#about', Label: 'Nosotros'},
     {href: '#maps', Label: 'Mapa'},
@@ -13,7 +13,7 @@ const navItems= [
     <nav class="max-w-7xl mx-auto px-8 py-4">
         <div class="flex justify-between items-center">
             <div>
-                <img src={headerlogo.src} width="350"/>
+                <Image src={headerlogo} width={350} height={100} alt="Logo Ritmo y Raíces" />
             </div>
             <div class="flex gap-6 items-center">
                 <a href="#about" class="text-white font-semibold hover:opacity-80">Nosotros</a>
