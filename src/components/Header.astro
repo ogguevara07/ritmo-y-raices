@@ -1,0 +1,30 @@
+---
+
+import headerlogo from "../assets/Diseño sin título-Photoroom.png"
+const navItems= [
+    {href: '#about', Label: 'Nosotros'},
+    {href: '#maps', Label: 'Mapa'},
+    {href: '#talleres', Label: 'Talleres'},
+    {href: '#shop', Label: 'Compra tus Boletos'}
+]
+---
+
+<header class="fixed top-0 w-full z-50" id="header" style="background-color: #F39300">
+    <nav class="max-w-7xl mx-auto px-8 py-4">
+        <div class="flex justify-between items-center">
+            <div>
+                <img src={headerlogo.src} width="350"/>
+            </div>
+            <div class="flex gap-6 items-center">
+                <a href="#about" class="text-white font-semibold hover:opacity-80">Nosotros</a>
+                <a href="#maps" class="text-white font-semibold hover:opacity-80">Mapa</a>
+                <a href="#talleres" class="text-white font-semibold hover:opacity-80">Talleres</a>
+                <a href="#shop">
+                    <button type="button" class="bg-white text-orange-500 px-4 py-2 rounded font-semibold hover:bg-gray-200 transition">
+                        Compra tus Boletos
+                    </button>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
