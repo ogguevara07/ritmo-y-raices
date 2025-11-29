@@ -4,7 +4,7 @@ name: Deploy Astro to GitHub Pages
 on:
   # Se ejecuta en push a main
   push:
-    branches: [ main ]
+    branches: [ master ]
   # Permite ejecutar manualmente desde la pestaña Actions
   workflow_dispatch:
 
