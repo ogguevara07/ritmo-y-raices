@@ -2,6 +2,9 @@
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import Header from "../components/Header.astro";
+import Activities from "../components/Activities.astro";
+import DanzaSection from "../components/DanzaSection.astro";
+import TicketsSections from "../components/TicketsSections.astro";
 
 const produccion = true;
 
@@ -14,5 +17,8 @@ const produccion = true;
     <Header/>
     <main>
         <Welcome />
+        <Activities/>
+        <DanzaSection/>
+        <TicketsSections/>
     </main>
 </Layout>
