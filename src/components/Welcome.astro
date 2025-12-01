@@ -1,17 +1,33 @@
 ---
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
+// import background from '../assets/corpus-christi.jpg';
+import backGroundWelcomeHome from '../assets/shutterstock_767199742.webp';
 ---
 
-<div id="container">
-    <div class="flex justify-center pt-20">
-        <iframe
-                src="https://www.youtube.com/embed/GkP-QcnBkDk"
-                width="1200"
-                height="759"
-                frameborder="0"
-                allowfullscreen>
-        </iframe>
+<section
+    class="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
+    style={`background-image: url(${backGroundWelcomeHome.src});`}
+>
+    <!-- Overlay oscuro semi-transparente -->
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <!-- Contenido centrado -->
+    <div class="relative z-10 text-center text-white px-4 max-w-4xl">
+        <p class="text-xl md:text-2xl italic mb-2">
+            Bienvenidos al Centro Cultural de la Danza del Corpus Christi
+        </p>
+
+        <h1 class="text-5xl md:text-7xl font-bold italic mb-8" style="font-family: 'Brush Script MT', cursive;">
+            Ritmo y Raíces
+        </h1>
+
+        <p class="text-base md:text-lg leading-relaxed">
+            Un espacio dedicado a preservar, promover y celebrar una de las expresiones más
+            emblemáticas del patrimonio cultural panameño. Nuestro centro busca mantener
+            viva la tradición de las danzas del Corpus Christi, transmitiendo su historia,
+            significado y belleza a las nuevas generaciones, a través del arte, la educación
+            y la comunidad.
+        </p>
     </div>
-</div>
+</section>
+
 
