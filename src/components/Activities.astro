@@ -1,3 +1,78 @@
 ---
-$END$
+import imgDanza from '../assets/Diablicossucios-1-1536x1080-1.jpeg';
+import imgMascaras from '../assets/mascaras.png';
+import imgCharlas from '../assets/IMG_3154.jpg';
+const actividades = [
+    {
+        titulo: "Taller de Danza",
+        imagen: imgDanza,
+        Description: "Participa en bailes y vístete para el escenario. Aprende paso a paso los diferentes bailes del Corpus Christi.",
+        ButtonDescription: "Entra aquí"
+    },
+    {
+        titulo: "Elaboración de Máscaras",
+        imagen: imgMascaras,
+        Description: "Crea tu propia máscara de diablico a tu gusto y cualquier ocasión. ¡Libera tu creatividad con materiales a tu disposición!",
+        ButtonDescription: "Entra aquí"
+    },
+    {
+        titulo: "Charlas y Conferencias",
+        imagen: imgCharlas,
+        Description: "Adentrate a fondo sobre la cultura y representación del Corpus Christi, mediante charlas y desmostraciones históricas.",
+        ButtonDescription: "Entra aquí"
+    },
+];
 ---
+
+
+<section class="bg-white py-16 px-4">
+    <!-- Sección Sobre Nosotros -->
+    <div class="max-w-6xl mx-auto mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-orange-500 mb-4">
+            Sobre Nosotros
+        </h2>
+        <p class="text-gray-700 text-lg mb-6">
+            Descubre que nos motiva en este centro cultural y para quién desarrollamos este proyecto.
+        </p>
+        <a 
+            href="/sobre-nosotros" 
+            class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+        >
+            Entra aquí
+        </a>
+    </div>
+
+    <!-- Sección Actividades -->
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-orange-500 italic mb-8">
+            Entérate de nuestras actividades
+        </h2>
+        
+        <!-- Grid de tarjetas -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {actividades.map((actividad) => (
+                <div class="group cursor-pointer">
+                    <!-- Imagen con bordes redondeados -->
+                    <div class="overflow-hidden rounded-2xl mb-4">
+                        <img 
+                            src={actividad.imagen.src} 
+                            alt={actividad.titulo}
+                            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                    </div>
+                    <!-- Título -->
+                    <h3 class="text-xl font-semibold text-orange-500">
+                        {actividad.titulo}
+                    </h3>
+                    <p class="text-gray-700 mb-2">
+                        {actividad.Description}
+                    </p>
+                    <a class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                        Entra aquí
+                    </a>
+
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
