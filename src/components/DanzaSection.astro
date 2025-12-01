@@ -1,3 +1,43 @@
 ---
-$END$
+import imgDanza from '../assets/Diablicossucios-1-1536x1080-1.jpeg';
+
 ---
+<section class="bg-gray-100 py-16 px-4">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+        <!-- Columna izquierda: Texto -->
+        <div>
+            <h2 class="text-4xl md:text-5xl font-bold text-orange-500 italic mb-6 leading-tight">
+                "Una danza entre el<br/>bien y el mal"
+            </h2>
+
+            <p class="text-gray-700 mb-4">
+                Celebrado desde la época colonial, el Corpus Christi panameño es una
+                manifestación que fusiona la religiosidad católica con las expresiones
+                artísticas populares.
+            </p>
+
+            <p class="text-gray-700 mb-8">
+                Las danzas como los Diablos Sucios, los Diablos Espejos, Gran Diablo,
+                Montezuma, representan la eterna lucha entre el bien y el mal, transmitiendo
+                valores morales y espirituales a través del teatro, la música y el movimiento.
+            </p>
+
+            <a
+                    href="/danzas"
+                    class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+            >
+                Entra aquí para conocer más
+            </a>
+        </div>
+
+        <!-- Columna derecha: Imagen -->
+        <div class="relative">
+            <img
+                    src={imgDanza.src}
+                    alt="Diablos del Corpus Christi"
+                    class="w-full h-auto rounded-2xl shadow-lg object-cover"
+            />
+        </div>
+    </div>
+</section>
