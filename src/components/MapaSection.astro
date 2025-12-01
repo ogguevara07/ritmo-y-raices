@@ -1,3 +1,69 @@
 ---
-$END$
+import imgDiablos from '../assets/Diablicossucios-1-1536x1080-1.jpeg';
+import imgMapa from '../assets/Mapa terminado.png';
+
+const puntos = [
+    "Zona Interactiva para niños",
+    "Sección: Danza de Montezuma",
+    "Sección: Danza de Diablicos Espejo",
+    "Sección: Danza de Diablicos Sucios",
+    "Sección: Danza del Gran Diablo",
+    "Actividad: Taller de creación de máscaras",
+    "Actividad: Taller de Baile Corpus Christi / Charlas y Seminarios",
+    "Actividad: Mural de firmas",
+];
 ---
+
+<section id="maps" class="bg-white py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+        <!-- Título principal -->
+        <h2 class="text-4xl md:text-5xl font-bold text-orange-500 italic mb-4">
+            Mapa del Centro
+        </h2>
+        <p class="text-gray-700 mb-12">
+            ¡Encuentra cada uno de los sitios, para que no te pierdas de nada!
+        </p>
+
+        <!-- Grid de 2 columnas -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+
+            <!-- Columna izquierda: Lista de puntos -->
+            <div>
+                <h3 class="text-2xl md:text-3xl font-bold text-orange-500 italic mb-6">
+                    Puntos del Centro Cultural
+                </h3>
+
+                <ol class="space-y-3">
+                    {puntos.map((punto, index) => (
+                            <li class="flex items-start gap-3">
+                            <span class="text-gray-800 font-bold min-w-6">
+                                {index + 1}.
+                            </span>
+                                <span class="text-gray-700">
+                                {punto}
+                            </span>
+                            </li>
+                    ))}
+                </ol>
+            </div>
+
+            <!-- Columna derecha: Imagen -->
+            <div>
+                <img
+                        src={imgDiablos.src}
+                        alt="Diablos del Corpus Christi"
+                        class="w-full h-auto rounded-2xl shadow-lg object-cover"
+                />
+            </div>
+        </div>
+
+        <!-- Imagen del mapa completo (opcional) -->
+        <div class="mt-12">
+            <img
+                    src={imgMapa.src}
+                    alt="Mapa del Centro Cultural"
+                    class="w-full h-auto rounded-2xl shadow-lg"
+            />
+        </div>
+    </div>
+</section>
