@@ -1,3 +1,40 @@
 ---
-$END$
+import { Image } from 'astro:assets';
+import headerlogo from "../assets/Logo blanco.png"
+import backGroundWelcomeHome from "../assets/shutterstock_767199742.webp";
+import backGroundHeader from "../assets/7df9a8d198642aa061f198b33543a647.jpg";
+const navItems= [
+    {href: '#about', Label: 'Nosotros'},
+    {href: '#maps', Label: 'Mapa'},
+    {href: '#talleres', Label: 'Talleres'},
+    {href: '#shop', Label: 'Compra tus Boletos'}
+]
 ---
+
+<header class="top-0 w-full " id="header" style={`background-image: url(${backGroundHeader.src});`}>
+    <nav class="max-w-7xl mx-auto px-8 py-4">
+        <div class="flex justify-between items-center">
+            <div>
+                <a href="/">
+                    <Image src={headerlogo} width={300} height={100} alt="Logo Ritmo y Raíces" />
+                </a>
+            </div>
+            <div class="flex gap-6 items-center">
+                <a href="/Nosotros" class="text-white font-semibold hover:opacity-80">Nosotros</a>
+                <a href="/Mapa" class="text-white font-semibold hover:opacity-80">Mapa</a>
+                <a href="/Talleres" class="text-white font-semibold hover:opacity-80">Talleres</a>
+                <a href="/Compra" >
+                    <button type="button" class="bg-orange-500 text-white px-4 py-2 rounded font-semibold hover:bg-gray-200 transition">
+                        Compra tus Boletos
+                    </button>
+                </a>
+            </div>
+
+        </div>
+        <div class="flex flex-col items-center justify-center gap-4 py-16">
+            <h1 style="font-family: 'Kaushan', cursive; color: whitesmoke; font-size: 5rem;">
+                ¡Aprende y Participa!
+            </h1>
+        </div>
+    </nav>
+</header>
