@@ -1,3 +1,24 @@
 ---
-$END$
+
+import headerlogo from "../assets/Logo blanco.png";
+import {Image} from "astro:assets";
+const base = import.meta.env.BASE_URL;
+
 ---
+
+
+<header class="top-0 w-full" id="header" style="background-color: #1A2C5B">
+    <nav class="max-w-7xl mx-auto px-8 py-4">
+        <div class="flex justify-center items-center">
+            <div>
+                <a href={base}>
+                    <Image src={headerlogo} width={300} height={100} alt="Logo Ritmo y Raíces" />
+                </a>
+
+                <h6 class="text-white text-xl font-semibold mt-2" style="font-family: 'Kaushan', cursive;">
+                    Venta de Boletos - Eventos y Festividades
+                </h6>
+            </div>
+        </div>
+    </nav>
+</header>
