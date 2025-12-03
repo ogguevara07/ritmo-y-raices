@@ -22,6 +22,18 @@ const talleres = [
         descripcion: "Participa en charlas educativas donde expertos compartirán el origen, evolución y significado del Corpus Christi panameño. Aprenderás sobre los diferentes personajes, la música tradicional y el impacto cultural de esta celebración en la identidad nacional.",
         imagen: imgCharlas,
     },
+    {
+        titulo: "Mural Participativo",
+        subtitulo: '"Marca tu Huella"',
+        descripcion: "Sé parte de la historia del centro cultural.  El mural participativo es un espacio abierto donde los visitantes pueden pintar, firmar o agregar un detalle artístico que quedará plasmado para futuras generaciones. Este muro en blanco se transforma día a día en un mosaico colectivo que celebra la creatividad, la identidad y el sentido de comunidad que caracteriza al Corpus Christi.",
+        imagen: imgMascaras,
+    },
+    {
+        titulo: "Taller de Expresión Artística",
+        subtitulo: "Un espacio para soñar con colores.",
+        descripcion: "Pensado especialmente para los más pequeños, este taller ofrece láminas ilustradas con personajes, símbolos y escenas del Corpus Christi panameño. Los niños podrán colorear, dibujar y experimentar libremente, mientras aprenden sobre nuestra riqueza cultural a través del arte. Un ambiente creativo, seguro y lleno de imaginación.",
+        imagen: imgCharlas,
+    }
 ];
 ---
 
@@ -61,7 +73,7 @@ const talleres = [
                                         {taller.descripcion}
                                     </p>
                                 </div>
-                                <div class="order-1 md:order-2">
+                                <div class="order-1 md:order-2" style="box-shadow: 0 0 0 10px white; border-radius: 16px;">
                                     <img
                                             src={taller.imagen.src}
                                             alt={taller.titulo}
@@ -71,7 +83,7 @@ const talleres = [
                             </>
                     ) : (
                             <>
-                                <div class="order-1">
+                                <div class="order-1" style="box-shadow: 0 0 0 10px white; border-radius: 16px;">
                                     <img
                                             src={taller.imagen.src}
                                             alt={taller.titulo}
