@@ -1,3 +1,37 @@
 ---
-$END$
+// HeroBanner.astro
+import heroImage from '../assets/Diablicossucios-1-1536x1080-1.jpeg'; // Cambia por tu imagen
 ---
+
+<section class="relative w-full h-[400px] md:h-[500px] overflow-hidden">
+    <!-- Imagen de fondo -->
+    <img
+            src={heroImage.src}
+            alt="Celebración del Corpus Christi"
+            class="absolute inset-0 w-full h-full object-cover"
+    />
+
+    <!-- Overlay oscuro para mejorar legibilidad -->
+    <div class="absolute inset-0 bg-black/30"></div>
+
+    <!-- Contenido del texto -->
+    <div class="relative z-10 h-full flex flex-col justify-end p-8 md:p-16 max-w-4xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4" style="font-family: 'Kaushan', cursive;">
+            Celebración del Corpus Christi
+        </h1>
+
+        <p class="text-white/90 text-base md:text-lg mb-4 max-w-xl">
+            Experimenta la tradición y cultura en nuestro centro. Adquiere tus boletos para eventos especiales y festividades.
+        </p>
+
+        <!-- Ubicación con ícono -->
+        <div class="flex items-center gap-2 text-orange-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-sm md:text-base">
+                Centro Cultural de Danza del Corpus Christi - Ritmo y Raíces, Condado del Rey
+            </span>
+        </div>
+    </div>
+</section>

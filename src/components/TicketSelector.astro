@@ -1,3 +1,205 @@
 ---
-$END$
+// TicketSelector.astro
+
+const boletos = [
+    {
+        id: 'ninos',
+        titulo: 'Niños',
+        descripcion: 'Menores de 12 años',
+        precio: 3,
+        color: 'text-purple-600',
+        bgColor: 'bg-purple-100',
+        borderColor: 'border-purple-600',
+        iconColor: 'text-purple-600',
+    },
+    {
+        id: 'adultos',
+        titulo: 'Adultos',
+        descripcion: 'Entrada general',
+        precio: 5,
+        color: 'text-blue-900',
+        bgColor: 'bg-blue-100',
+        borderColor: 'border-blue-900',
+        iconColor: 'text-blue-900',
+    },
+    {
+        id: 'tercera',
+        titulo: 'Tercera Edad',
+        descripcion: 'Mayores de 60 años',
+        precio: 2,
+        color: 'text-orange-500',
+        bgColor: 'bg-orange-100',
+        borderColor: 'border-orange-500',
+        iconColor: 'text-orange-500',
+    },
+    {
+        id: 'escolar',
+        titulo: 'Grupo Escolar',
+        descripcion: 'Paquete 10 estudiantes',
+        precio: 30,
+        color: 'text-orange-500',
+        bgColor: 'bg-orange-100',
+        borderColor: 'border-orange-500',
+        iconColor: 'text-orange-500',
+        oferta: true,
+    },
+];
 ---
+
+<section class="relative py-16 px-4 overflow-hidden">
+    <!-- Fondo con gradiente azul/morado -->
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-900 via-purple-800 to-blue-900 opacity-90"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto">
+        <!-- Título -->
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" style="font-family: 'Kaushan', cursive;">
+                Selecciona Tus Boletos
+            </h2>
+            <p class="text-white/80 text-lg max-w-2xl mx-auto">
+                Elige la cantidad de boletos que necesitas. Ofrecemos precios especiales para niños, adultos mayores y grupos escolares.
+            </p>
+        </div>
+
+        <!-- Cards de boletos -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            {boletos.map((boleto) => (
+                    <div class="bg-white rounded-2xl p-6 shadow-lg relative">
+                        {/* Etiqueta de oferta */}
+                        {boleto.oferta && (
+                                <span class="absolute -top-2 -right-2 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            ¡Oferta Especial!
+                        </span>
+                        )}
+
+                        {/* Ícono */}
+                        <div class="flex justify-center mb-4">
+                            <div class={`w-16 h-16 rounded-full border-2 ${boleto.borderColor} flex items-center justify-center`}>
+                                <svg xmlns="http://www.w3.org/2000/svg" class={`h-8 w-8 ${boleto.iconColor}`} viewBox="0 0 24 24" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        {/* Título y descripción */}
+                        <div class="text-center mb-4">
+                            <h3 class={`text-xl font-bold ${boleto.color}`}>{boleto.titulo}</h3>
+                            <p class="text-gray-500 text-sm">{boleto.descripcion}</p>
+                        </div>
+
+                        {/* Precio */}
+                        <div class="text-center mb-6">
+                            <span class="text-3xl font-bold text-gray-800">${boleto.precio}</span>
+                            <span class="text-gray-500 text-sm">PAB</span>
+                        </div>
+
+                        {/* Contador */}
+                        <div class="flex items-center justify-center gap-4">
+                            <button
+                                    type="button"
+                                    class={`w-10 h-10 rounded-lg ${boleto.bgColor} ${boleto.color} text-2xl font-bold hover:opacity-80 transition btn-decrease`}
+                                    data-id={boleto.id}
+                                    data-precio={boleto.precio}
+                            >
+                                −
+                            </button>
+                            <span
+                                    class="text-xl font-semibold w-8 text-center cantidad"
+                                    data-id={boleto.id}
+                            >
+                            0
+                        </span>
+                            <button
+                                    type="button"
+                                    class={`w-10 h-10 rounded-lg ${boleto.bgColor} ${boleto.color} text-2xl font-bold hover:opacity-80 transition btn-increase`}
+                                    data-id={boleto.id}
+                                    data-precio={boleto.precio}
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+            ))}
+        </div>
+
+        <!-- Total -->
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-md mx-auto">
+            <div class="flex justify-between items-center text-white mb-4">
+                <span class="text-xl">Total de boletos:</span>
+                <span class="text-2xl font-bold" id="total-boletos">0</span>
+            </div>
+            <div class="flex justify-between items-center text-white mb-6">
+                <span class="text-xl">Total a pagar:</span>
+                <span class="text-3xl font-bold" id="total-precio">$0 PAB</span>
+            </div>
+            <button
+                    type="button"
+                    class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-xl transition text-lg"
+            >
+                Continuar con la compra
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Estado de los boletos
+    const cantidades: Record<string, number> = {
+        ninos: 0,
+        adultos: 0,
+        tercera: 0,
+        escolar: 0,
+    };
+
+    const precios: Record<string, number> = {
+        ninos: 3,
+        adultos: 5,
+        tercera: 2,
+        escolar: 30,
+    };
+
+    function actualizarTotal() {
+        let totalBoletos = 0;
+        let totalPrecio = 0;
+
+        for (const id in cantidades) {
+            totalBoletos += cantidades[id];
+            totalPrecio += cantidades[id] * precios[id];
+        }
+
+        const totalBoletosEl = document.getElementById('total-boletos');
+        const totalPrecioEl = document.getElementById('total-precio');
+
+        if (totalBoletosEl) totalBoletosEl.textContent = totalBoletos.toString();
+        if (totalPrecioEl) totalPrecioEl.textContent = `$${totalPrecio} PAB`;
+    }
+
+    function actualizarCantidad(id: string) {
+        const cantidadEl = document.querySelector(`.cantidad[data-id="${id}"]`);
+        if (cantidadEl) {
+            cantidadEl.textContent = cantidades[id].toString();
+        }
+    }
+
+    // Event listeners para botones de incremento
+    document.querySelectorAll('.btn-increase').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const id = (btn as HTMLElement).dataset.id!;
+            cantidades[id]++;
+            actualizarCantidad(id);
+            actualizarTotal();
+        });
+    });
+
+    // Event listeners para botones de decremento
+    document.querySelectorAll('.btn-decrease').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const id = (btn as HTMLElement).dataset.id!;
+            if (cantidades[id] > 0) {
+                cantidades[id]--;
+                actualizarCantidad(id);
+                actualizarTotal();
+            }
+        });
+    });
+</script>
