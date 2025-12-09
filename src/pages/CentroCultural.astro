@@ -1,0 +1,43 @@
+---
+
+import imgDanza from '../assets/7df9a8d198642aa061f198b33543a647.jpg';
+import Layout from "../layouts/Layout.astro";
+---
+<Layout>
+    <section class="bg-white py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <!-- Imagen -->
+                <div class="rounded-lg overflow-hidden shadow-lg">
+                    <img
+                            src={imgDanza.src}
+                            alt="Danzas del Corpus Christi"
+                            class="w-full h-auto object-cover"
+                    />
+                </div>
+
+                <!-- Contenido de texto -->
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-red-600 mb-6 font-koho">
+                        Danzas del Corpus Christi
+                    </h2>
+
+                    <p class="text-gray-700 text-xl leading-relaxed mb-6 font-inter ">
+                        El Corpus Christi en Panamá es una de las celebraciones más emblemáticas y antiguas del país, reconocida por su colorido, sus personajes tradicionales y su profundo valor espiritual y cultural. Sus raíces se remontan al período colonial, cuando las festividades religiosas europeas se fusionaron con expresiones populares locales, dando origen a una manifestación única que combina teatro, danza y tradición oral.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Párrafos adicionales debajo -->
+            <div class="mt-8 space-y-6">
+                <p class="text-gray-700 text-xl leading-relaxed font-inter">
+                    A lo largo de los siglos, esta celebración ha evolucionado hasta convertirse en un verdadero espectáculo comunitario donde participan diablos danzantes, figuras simbólicas, comparsas y expresiones artísticas que representan la lucha entre el bien y el mal. Cada elemento —desde las máscaras talladas a mano hasta las danzas rituales— cuenta una parte de la historia y refleja la identidad colectiva de diversas regiones del país, especialmente en pueblos como La Villa de Los Santos y Parita.
+                </p>
+
+                <p class="text-gray-700 text-xl leading-relaxed font-inter">
+                    Hoy en día, el Corpus Christi sigue siendo una tradición viva que une generaciones y preserva un legado que forma parte del patrimonio cultural panameño. Este resumen es solo una pequeña ventana a su riqueza simbólica; para descubrir de cerca sus personajes, significados y expresiones artísticas, te invitamos a visitar nuestro Centro Cultural y vivir esta tradición en primera persona.
+                </p>
+            </div>
+        </div>
+    </section>
+</Layout>
