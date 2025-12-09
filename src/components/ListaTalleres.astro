@@ -1,7 +1,9 @@
 ---
-import imgDanza from '../assets/Diablicossucios-1-1536x1080-1.jpeg';
-import imgMascaras from '../assets/mascaras.png';
+import imgDanza from '../assets/corpus-christi.jpg';
+import imgMascaras from '../assets/aHR0cHM6Ly9zaWN1bHR1cmEuZ29iLnBhL2ltYWdlcy9tYW5pZmVzdGFjaW9uZXMvaW1nXzc1NzQuanBn.jpg';
+import imgChicoDibujando from '../assets/5fc0b0cc3eea97ab3472cac0b66a1de9.jpg';
 import imgCharlas from '../assets/IMG_3154.jpg';
+import imgNinos from '../assets/istockphoto-524171150-612x612.jpg';
 
 const talleres = [
     {
@@ -26,19 +28,19 @@ const talleres = [
         titulo: "Mural Participativo",
         subtitulo: '"Marca tu Huella"',
         descripcion: "Sé parte de la historia del centro cultural.  El mural participativo es un espacio abierto donde los visitantes pueden pintar, firmar o agregar un detalle artístico que quedará plasmado para futuras generaciones. Este muro en blanco se transforma día a día en un mosaico colectivo que celebra la creatividad, la identidad y el sentido de comunidad que caracteriza al Corpus Christi.",
-        imagen: imgMascaras,
+        imagen: imgChicoDibujando,
     },
     {
         titulo: "Taller de Expresión Artística",
         subtitulo: "Un espacio para soñar con colores.",
         descripcion: "Pensado especialmente para los más pequeños, este taller ofrece láminas ilustradas con personajes, símbolos y escenas del Corpus Christi panameño. Los niños podrán colorear, dibujar y experimentar libremente, mientras aprenden sobre nuestra riqueza cultural a través del arte. Un ambiente creativo, seguro y lleno de imaginación.",
-        imagen: imgCharlas,
+        imagen: imgNinos,
     }
 ];
 ---
 
 
-<div class="triangles-banner h-20 md:h-28 flex items-center justify-center">
+<div class="triangles-banner h-20 md:h-28 flex items-center justify-center font-koho" style="text-shadow: 2px 2px 4px red;">
     <h1 class="text-white text-3xl md:text-4xl">
         Conoce los talleres que tenemos para ti cuando visites el Centro Cultural
     </h1>
@@ -46,11 +48,11 @@ const talleres = [
 
 <!-- Sección de introducción -->
 <section class="bg-orange-500 py-12 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold italic text-white drop-shadow-md font-kaushan">
-            Conoce los talleres que tenemos para ti cuando visites el Centro Cultural
-        </h2>
-    </div>
+    <!--<div class="max-w-4xl mx-auto text-center">-->
+    <!--    <h2 class="text-3xl md:text-4xl font-bold italic text-white drop-shadow-md font-kaushan">-->
+    <!--        Conoce los talleres que tenemos para ti cuando visites el Centro Cultural-->
+    <!--    </h2>-->
+    <!--</div>-->
 </section>
 
 <!-- Talleres -->
@@ -63,13 +65,13 @@ const talleres = [
                     {index % 2 === 0 ? (
                             <>
                                 <div class="order-2 md:order-1">
-                                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2 font-koho">
                                         {taller.titulo}
                                     </h3>
                                     <p class="text-gray-800 mb-4">
                                         {taller.subtitulo}
                                     </p>
-                                    <p class="text-gray-800 leading-relaxed">
+                                    <p class="text-gray-800 leading-relaxed font-inter">
                                         {taller.descripcion}
                                     </p>
                                 </div>

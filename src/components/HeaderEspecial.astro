@@ -1,33 +1,39 @@
 ---
 import { Image } from 'astro:assets';
 import headerlogo from "../assets/Logo blanco.png"
-import backGroundHeader from "../assets/7df9a8d198642aa061f198b33543a647.jpg";
+import backGroundHeader from "../assets/14007.jpg";
 const base = import.meta.env.BASE_URL;
 ---
 
-<header class="top-0 w-full " id="header" style={`background-image: url(${backGroundHeader.src});`}>
-    <nav class="max-w-7xl mx-auto px-8 py-4">
-        <div class="flex justify-between items-center">
-            <div>
-                <a href={base}>
-                    <Image src={headerlogo} width={300} height={100} alt="Logo Ritmo y Raíces" />
-                </a>
+<header class="relative top-0 w-full bg-cover bg-center bg-no-repeat" id="header" style={`background-image: url(${backGroundHeader.src});`}>
+    <!-- Overlay con blur -->
+    <div class="absolute inset-0 backdrop-blur-sm bg-black/20"></div>
+
+    <!-- Contenido del header -->
+    <div class="relative z-10">
+        <nav class="max-w-7xl mx-auto px-8 py-4">
+            <div class="flex justify-between items-center">
+                <div>
+                    <a href={base}>
+                        <Image src={headerlogo} width={300} height={100} alt="Logo Ritmo y Raíces" />
+                    </a>
+                </div>
+                <div class="flex gap-6 items-center">
+                    <a href={`${base}Nosotros`} class="text-white font-semibold hover:opacity-80">Nosotros</a>
+                    <a href={`${base}Mapa`} class="text-white font-semibold hover:opacity-80">Mapa</a>
+                    <a href={`${base}Talleres`} class="text-white font-semibold hover:opacity-80">Talleres</a>
+                    <a href={`${base}Compra`}>
+                        <button type="button" class="bg-orange-500 text-white px-4 py-2 rounded font-semibold hover:bg-gray-200 transition">
+                            Compra tus Boletos
+                        </button>
+                    </a>
+                </div>
             </div>
-            <div class="flex gap-6 items-center">
-                <a href={`${base}Nosotros`} class="text-white font-semibold hover:opacity-80">Nosotros</a>
-                <a href={`${base}Mapa`} class="text-white font-semibold hover:opacity-80">Mapa</a>
-                <a href={`${base}Talleres`} class="text-white font-semibold hover:opacity-80">Talleres</a>
-                <a href={`${base}Compra`}>
-                    <button type="button" class="bg-orange-500 text-white px-4 py-2 rounded font-semibold hover:bg-gray-200 transition">
-                        Compra tus Boletos
-                    </button>
-                </a>
+            <div class="flex flex-col items-center justify-center gap-4 py-16">
+                <h1 style="font-family: 'Kaushan', cursive; color: whitesmoke; font-size: 5rem; text-shadow: 2px 2px 4px red;" >
+                    ¡Aprende y Participa!
+                </h1>
             </div>
-        </div>
-        <div class="flex flex-col items-center justify-center gap-4 py-16">
-            <h1 style="font-family: 'Kaushan', cursive; color: whitesmoke; font-size: 5rem;">
-                ¡Aprende y Participa!
-            </h1>
-        </div>
-    </nav>
+        </nav>
+    </div>
 </header>
